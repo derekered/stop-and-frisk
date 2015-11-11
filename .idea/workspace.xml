@@ -24,8 +24,8 @@
       <file leaf-file-name="logistic_regression.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/logistic_regression.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8021978">
-              <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.53846157">
+              <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="35" />
               <folding>
                 <element signature="e#22#41#0" expanded="true" />
               </folding>
@@ -304,8 +304,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/logistic_regression.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8021978">
-          <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.53846157">
+          <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="35" />
           <folding>
             <element signature="e#22#41#0" expanded="true" />
           </folding>

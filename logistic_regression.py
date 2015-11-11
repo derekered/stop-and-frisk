@@ -19,7 +19,7 @@ df.columns = ["pct", "datestop", "timestop", "inout", "trhsloc", "typeofid", "ex
 
 # print df.head
 # print df.columns
-print df.dtypes
+# print df.dtypes
 
 # print df.describe()
 
@@ -30,19 +30,22 @@ dummy_race = pd.get_dummies(df['race'], prefix='race')
 # dummy_ = pd.get_dummies(df[''], prefix='')
 
 # print dummy_race.head()
+# print dummy_race['race_A']
 
 # create a clean data frame for the regression
-cols_to_keep = ["explnstp", "othpers", "arstmade",
-              "offunif", "officrid", "frisked", "searched", "contrabn", "pistol", "riflshot", "asltweap", "knifcuti",
-              "machgun", "othrweap", "pf_hands", "pf_wall", "pf_grnd", "pf_drwep", "pf_ptwep", "pf_baton", "pf_hcuff",
-              "pf_pepsp", "pf_other", "rf_vcrim", "rf_othsw", "ac_proxm", "rf_attir", "cs_objcs", "cs_descr",
-              "cs_casng", "cs_lkout", "rf_vcact", "cs_cloth", "cs_drgtr", "ac_evasv", "ac_assoc", "cs_furtv",
-              "rf_rfcmp", "ac_cgdir", "rf_verbl", "cs_vcrim", "cs_bulge", "cs_other", "ac_incid", "ac_time", "rf_knowl",
-              "ac_stsnd", "ac_other", "sb_hdobj", "sb_outln", "sb_admis", "sb_other", "rf_furt", "rf_bulg", "offverb",
-              "offshld"]
+cols_to_keep = ["frisked", "contrabn"]
 
-data = df[cols_to_keep].join(dummy_race.ix[:,'race_A'])
-# print data.head()
+# cols_to_keep = ["explnstp", "othpers", "arstmade",
+#               "offunif", "officrid", "frisked", "searched", "contrabn", "pistol", "riflshot", "asltweap", "knifcuti",
+#               "machgun", "othrweap", "pf_hands", "pf_wall", "pf_grnd", "pf_drwep", "pf_ptwep", "pf_baton", "pf_hcuff",
+#               "pf_pepsp", "pf_other", "rf_vcrim", "rf_othsw", "ac_proxm", "rf_attir", "cs_objcs", "cs_descr",
+#               "cs_casng", "cs_lkout", "rf_vcact", "cs_cloth", "cs_drgtr", "ac_evasv", "ac_assoc", "cs_furtv",
+#               "rf_rfcmp", "ac_cgdir", "rf_verbl", "cs_vcrim", "cs_bulge", "cs_other", "ac_incid", "ac_time", "rf_knowl",
+#               "ac_stsnd", "ac_other", "sb_hdobj", "sb_outln", "sb_admis", "sb_other", "rf_furt", "rf_bulg", "offverb",
+#               "offshld"]
+
+data = df[cols_to_keep].join(dummy_race.ix[:, :'race_U'])
+print data.head()
 
 # manually add the intercept
 data['intercept'] = 1.0
