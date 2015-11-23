@@ -38,7 +38,11 @@ dummy_pct = pd.get_dummies(df['pct'], prefix='pct')
 
 
 # create a clean data frame for the regression
-cols_to_keep = ["frisked", "searched", "contrabn", "othpers", "forceused"]
+cols_to_keep = ["frisked", "othpers", "cs_objcs", "cs_descr",
+              "cs_casng", "cs_lkout", "cs_cloth", "cs_drgtr", "cs_furtv", "cs_vcrim", "cs_bulge", "cs_other"]
+
+# cols_to_keep = ["frisked", "searched", "contrabn", "othpers", "forceused", "cs_objcs", "cs_descr",
+              # "cs_casng", "cs_lkout", "cs_cloth", "cs_drgtr", "cs_furtv", "cs_vcrim", "cs_bulge", "cs_other"]
 
 # cols_to_keep = ["explnstp", "othpers", "arstmade",
 #               "offunif", "officrid", "frisked", "searched", "contrabn", "pistol", "riflshot", "asltweap", "knifcuti",
@@ -60,11 +64,17 @@ data = data.join(dummy_pct.ix[:, :'pct_122'])
 # manually add the intercept
 data['intercept'] = 1.0
 
+
+cols_to_keep = ['intercept', 'cs_drgtr', 'cs_lkout', 'othpers', 'cs_descr', 'cs_casng', 'cs_cloth', 'cs_furtv', 'cs_vcrim', 'cs_bulge', 'cs_other', 'race_B', 'sex_0', 'pct_7', 'pct_9', 'pct_10', 'pct_13', 'pct_19', 'pct_23', 'pct_25', 'pct_26', 'pct_28', 'pct_30', 'pct_32', 'pct_33', 'pct_34', 'pct_41', 'pct_42', 'pct_43', 'pct_44', 'pct_45', 'pct_46', 'pct_47', 'pct_48', 'pct_50', 'pct_52', 'pct_60', 'pct_61', 'pct_63', 'pct_66', 'pct_67', 'pct_69', 'pct_70', 'pct_71', 'pct_72', 'pct_75', 'pct_79', 'pct_81', 'pct_83', 'pct_90', 'pct_100', 'pct_101', 'pct_103', 'pct_104', 'pct_105', 'pct_106', 'pct_107', 'pct_108', 'pct_109', 'pct_110', 'pct_111', 'pct_112', 'pct_113', 'pct_114', 'pct_115', 'pct_120', 'pct_121', 'pct_122']
+
+
 # define training columns
-train_cols = data.columns[1:]
+# train_cols = data.columns[1:]
+train_cols = cols_to_keep
 
 # define model with variable to predict
 logit = sm.Logit(data['frisked'], data[train_cols])
+
 
 # fit the model
 result = logit.fit()
