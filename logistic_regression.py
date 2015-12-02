@@ -55,7 +55,11 @@ logit = sm.Logit(data['frisked'], data[train_cols])
 # fit the model
 result = logit.fit()
 
-print result.summary()
+# print result.summary()
+
+output = open('output.csv', mode='w')
+output.write(result.summary().as_csv())
+output.close()
 
 # ------------------   METHOD 2 - Regression with only low p-value features  ------------------
 
