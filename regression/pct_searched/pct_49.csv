@@ -1,0 +1,29 @@
+                    Logit Regression Results                   
+Dep. Variable:,searched        ,  No. Observations:  ,   475   
+Model:        ,Logit           ,  Df Residuals:      ,   456   
+Method:       ,MLE             ,  Df Model:          ,    18   
+Date:         ,Thu, 03 Dec 2015,  Pseudo R-squ.:     ,0.1202   
+Time:         ,14:01:29        ,  Log-Likelihood:    , -163.55 
+converged:    ,False           ,  LL-Null:           , -185.90 
+              ,                ,  LLR p-value:       ,0.0004599
+         ,   coef   , std err ,    z    ,P>|z| , [95.0% Conf. Int.]
+othpers  ,   -0.0573,    0.355,   -0.162, 0.872,   -0.752     0.638
+cs_objcs ,    1.9632,    0.740,    2.652, 0.008,    0.513     3.414
+cs_descr ,    0.2898,    0.332,    0.873, 0.383,   -0.361     0.940
+cs_casng ,    0.2062,    0.509,    0.405, 0.685,   -0.791     1.203
+cs_lkout ,   -0.5625,    0.675,   -0.834, 0.404,   -1.885     0.760
+cs_cloth ,   -0.7453,    0.808,   -0.922, 0.357,   -2.330     0.839
+cs_drgtr ,   -0.2733,    0.676,   -0.405, 0.686,   -1.598     1.051
+cs_furtv ,    1.0932,    0.303,    3.613, 0.000,    0.500     1.686
+cs_vcrim ,    0.2477,    0.631,    0.392, 0.695,   -0.989     1.485
+cs_bulge ,    0.9739,    0.417,    2.338, 0.019,    0.157     1.790
+cs_other ,    0.5569,    0.354,    1.572, 0.116,   -0.137     1.251
+race_A   ,  -35.3570,  2.6e+10,-1.36e-09, 1.000, -5.1e+10   5.1e+10
+race_B   ,   11.9776,      nan,      nan,   nan,      nan       nan
+race_I   ,  -11.3507,      nan,      nan,   nan,      nan       nan
+race_P   ,   11.2524,      nan,      nan,   nan,      nan       nan
+race_Q   ,   12.5825,      nan,      nan,   nan,      nan       nan
+race_U   ,  -16.1590,      nan,      nan,   nan,      nan       nan
+race_W   ,   12.1780,      nan,      nan,   nan,      nan       nan
+sex_0    ,  -33.4345, 9.82e+06,-3.41e-06, 1.000,-1.92e+07  1.92e+07
+intercept,  -14.8761,      nan,      nan,   nan,      nan       nan
