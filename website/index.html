@@ -134,9 +134,9 @@
                         <a class="page-scroll" href="#theask">The Ask</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#howwemeasure">How We Measured</a>
+                        <a class="page-scroll" href="#howwemeasure">Data</a>
                     </li>
-                     
+
                     <li>
                         <a class="page-scroll" href="#ourmodel">Our Model</a>
                     </li>
@@ -158,7 +158,7 @@
             <div class="header-content-inner">
                 <h1>Stop, Question, Frisk</h1>
                 <hr>
-                <p>Over the past few years the “stop-and-frisk” program in NYC has come under significant scrutiny for unlawfully targeting minorities,  The city is currently reforming the program. We are interested in determining what the data can tell us about where and how the program can be improved.</p>
+                <p>Over the past few years the “stop-and-frisk” program in NYC has come under significant scrutiny for unlawfully targeting minorities. The city is currently reforming the program. We are interested in determining what the data can tell us about where and how the program can be improved.</p>
                 <a href="#theask" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
             </div>
         </div>
@@ -169,12 +169,15 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">The Ask</h2>
-                    
+
                     <hr class="primary">
-                    <p class="text-faded"><p>What attributes increase a citizen's likelihood of being questioned and frisked? How effective is the Stop, Question, and Frisk policy in removing contraband in NYC neighborhoods?</p>
-                <p>Are there attributes that cause a person to be incorrectly frisked (i.e. frisked without discovering contraband)?</p>
+                    <p class="text-faded">
+                    <p>How has the program been scaled back since Mayor de Blasio’s reform policies? How effective is the Stop, Question, and Frisk policy in finding contraband in NYC neighborhoods?</p>
+                    <p>For a person of a given race stopped by the police, how likely/unlikely are they to have contraband compared to the average person? Have the reforms affected the disparity between the racial demographics of NYC and the racial demographics of the people stopped?</p>
+                    <p>Which NYC precincts have the most stops per capita, find the most contraband, and have the greatest racial disparity?</p>
+
                 </br>
-                <p>Our hypothesis is that race contributes greatly to a person’s likelihood of being questioned and frisked. We will run a regression to identify what attributes (whether it be ethnicity, time of day, etc.) that might have led to them being improperly frisked.</p>
+                <p>Our hypothesis is that since the increased scrutiny and reform of the program beginning in 2013, the number of stops made has decreased, while the effectiveness of the program to discover contraband has remained stagnant.</p></p>
                 </div>
             </div>
         </div>
@@ -185,7 +188,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">How We Measured</h2>
+                    <h2 class="section-heading">Data</h2>
                     <!--<hr class="light">-->
                     <hr class="primary">
                 </div>
@@ -196,22 +199,22 @@
                 <div class="col-lg-4 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-file-archive-o wow text-primary"></i>
-                        <h3>Constant Records</h3>
+                        <h3>Collection</h3>
                         <p class="text-muted">Every time a police officer stops a person in NYC, the officer is supposed to fill out a form to record the details of the stop. </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-folder-open-o wow text-primary"></i>
-                        <h3>Record Types</h3>
-                        <p class="text-muted">The NYPD reports the stop-and-frisk data in two ways: a paper report released quarterly and an electronic database released annually. The electronic database includes nearly all of the data recorded by a policy officer after a stop. </p>
+                        <h3>Sources</h3>
+                        <p class="text-muted">The NYPD reports the stop-and-frisk data in two ways: a paper report released quarterly and an electronic database released annually. We combined this data with demographic US census data to develop our model. </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-database wow text-primary"></i>
-                        <h3>Record Types</h3>
-                        <p class="text-muted">The data include the age and race of the person stopped, if the person was frisked, if there was a weapon or firearm recovered, if physical force was used and the exact location of the stop within the precinct.</p>
+                        <h3>Features</h3>
+                        <p class="text-muted">The data includes the race and location of the person stopped, if the person was frisked, and if there was a weapon or firearm recovered.</p>
                     </div>
                 </div>
             </div>
@@ -220,7 +223,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 text-center">
-                        <p>We will use the 2014 Stop, Question and Frisk data provided by the NYPD.  The data includes 112 features, and over 45,000 records.</p>
                             <a href="http://www.nyc.gov/html/nypd/html/analysis_and_planning/stop_question_and_frisk_report.shtml" class="btn btn-primary btn-xl page-scroll">View Our Data Source</a>
                     </div>
                 </div>
@@ -234,7 +236,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Our Model</h2>
                     <hr class="light">
-                    <p class="text-faded">We will utilize regression to identify different attributes that will lead to an individual being frisked and not discovering any contrabands. We will then create a regression for each precinct and determine if there are differences in attributes that may cause one precinct to incorrectly frisk when compared to another precinct.</p>
+                    <p class="text-faded">To measure the disparity between the racial demographics of NYC and the people stopped, we developed a Racial Disparity Index. The RDI measures when races and ethnicities are more regularly targeted for Stops, Questions, and Frisks than would be warranted by the demographic makeup of a community at the city level and precinct level.</p>
                 </div>
             </div>
         </div>
@@ -249,11 +251,86 @@
                     <h2 class="section-heading">Overall Results</h2>
                     <hr class="primary">
                     <div class="chart" id="container5" style="height: 300px; width: 700px"></div>
-                </br>
-             <div class="chart" id="container6" style="height: 300px; width: 700px"></div>
+                    <p class="text-muted">
+                      The number of stops made began to significantly decrease starting in 2013 due to public scrutiny and eventually because of reforms introduced by Mayor de Blasio.
+                    </p>
+                </br></br></br></br>
+                    <div class="chart" id="container6" style="height: 300px; width: 700px"></div>
+                    <p class="text-muted">
+                      Even as the number of stops has decreased over time, the percentage of contraband discovered has increased.
+                    </p>
+                </br></br></br></br>
+                    <table>
+                    <tbody>
+                    <tr>
+                    <td style="background-color: #f05f40; color: #ffffff"><strong>Race</strong></td>
+                    <td style="background-color: #f05f40; color: #ffffff"><strong>Percentage with Stopped with Contraband</strong></td>
+                    <td style="background-color: #f05f40; color: #ffffff"><strong>More/Less Likely to Have Contaband than the Average Person</strong></td>
+                    </tr>
+                    <tr>
+                    <td>Asian/Pacific Islander</td>
+                    <td>2.46%</td>
+                    <td>-32.9%</td>
+                    </tr>
+                    <tr>
+                    <td>American Indian/ Alaskan Native</td>
+                    <td>2.60%</td>
+                    <td>-28.8%</td>
+                    </tr>
+                    <tr>
+                    <td>Other</td>
+                    <td>3.18%</td>
+                    <td>-13.2%</td>
+                    </tr>
+                    <tr>
+                    <td>Black</td>
+                    <td>3.73%</td>
+                    <td>2.0%</td>
+                    </tr>
+                    <tr>
+                    <td>White</td>
+                    <td>4.13%</td>
+                    <td>13.0%</td>
+                    </tr>
+                    <tr>
+                    <td>White-Hispanic</td>
+                    <td>4.64%</td>
+                    <td>26.8%</td>
+                    </tr>
+                    <tr>
+                    <td>Black-Hispanic</td>
+                    <td>4.88%</td>
+                    <td>33.2%</td>
+                    </tr>
+                    <tr>
+                    <td>Average</td>
+                    <td>3.66%</td>
+                    <td>0%</td>
+                    </tr>
+                    </tbody>
+                    </table>
+
+
                 </div>
             </div>
         </div>
+      </br></br></br></br></br></br>
+        <div class="container">
+            <div class="row" style="text-align:center;">
+                <div class="col-lg-7 col-md-6 text-center">
+                    <div class="service-box">
+                        <h1>4.57</h1>
+                        <p class="text-muted">2010-2012 Racial Disparity Index (RDI)</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <h1>4.18</h1>
+                        <p class="text-muted">2014 Racial Disparity Index (RDI)</p>
+                    </div>
+                </div>
+            </div>
+
     </section>
 
 
@@ -263,14 +340,16 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Visual Map</h2>
                     <hr class="primary">
-                    <p>We will create a map of the NYC boroughs that are overlaid with the precincts  of the city. On this map, we will also display which precincts more regularly engaged in frisks that resulted in zero contraband findings, along with significance of each attribute that led to citizens being incorrectly frisked. </p>
+                    <p>On this map we display which precincts more regularly engaged in stops that resulted in low contraband findings, along with the Racial Disparity Index for each precinct. </p>
+<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
+<div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="sf_map" src="http://dataproducts.maps.arcgis.com/apps/Embed/index.html?webmap=0464230a60b34c1fa8e18b04494b0c9e&amp;extent=-74.5141,40.4218,-73.2823,40.982&amp;zoom=true&amp;scale=true&amp;details=true&amp;disable_scroll=true&amp;theme=light"></iframe></div>
                 </div>
             </div>
         </div>
     </section>
     <script src="highchart/js/highcharts.js"></script>
 
-    
+
 
     <!-- jQuery -->
     <!--<script src="js/jquery.js"></script>-->
